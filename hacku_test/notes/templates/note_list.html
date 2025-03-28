@@ -1,0 +1,25 @@
+<div class="col">
+    <h1>Saved Notes:</h1>
+
+    {% if error %}
+    <h1><b>{{ error }}</b></h1>
+    {% endif %}
+
+    {% if success %}
+    <div>note id: {{ success }} saved successfully</div>
+    {% endif %}
+
+    {% if notes %}
+    <div class="row row-cols-2">
+        {% for note in notes %}
+        <div class="col card">
+            <div class="card-body">
+                <h1><b>{{ note.title }}</b> ({{ note.category }})</h1>
+
+                <p>{{ note.content }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+</div>

@@ -1,0 +1,30 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+
+<div id="#notes-container" class="container-sm">
+    <div class="row">
+        {% include 'note_list.html' %}
+        <form class="col" action="{% url 'notes:notes' %}" method="post" hx-post="{% url 'notes:notes' %}"
+            hx.target="#notes-container">
+            <h1>Create new Note:</h1>
+            {% csrf_token %}
+            {% for field in form %}
+                <div class="mb-3">
+                    <label>{{ field.label }}</label>
+                    <br>
+                    {{ field }}
+                </div>
+            {% endfor %}
+            <button>Save</button>
+        </form>
+    </div>
+
+</div>
+
+
+
+
+
+{% endblock %}
