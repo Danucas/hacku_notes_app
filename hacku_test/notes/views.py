@@ -1,7 +1,5 @@
-from django.shortcuts import render, redirect
-from django.urls import reverse
-from django.http import HttpResponse, HttpResponseRedirect
-from django.views.generic.list import ListView
+from django.shortcuts import render
+from django.http import HttpResponseRedirect
 from . import models
 from . import forms
 
